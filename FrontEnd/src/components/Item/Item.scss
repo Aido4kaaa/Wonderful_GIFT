@@ -1,0 +1,15 @@
+@import "../../ui-kit/styles/index";
+
+.Item{
+    width: 90%;
+    margin-left: 20px;
+    padding: 5px;
+    background-color: $color-lavender-transparent;
+    border-radius: 8px;
+    border: 2px solid $color-lavender;
+    border-width: 0px 2px 2px 2px;
+    &-Name{
+        @include Sans-serif-16-bold;
+        margin-bottom: 20px;
+    }
+}

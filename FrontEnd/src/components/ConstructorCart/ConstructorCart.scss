@@ -1,0 +1,35 @@
+@import "../../ui-kit/styles/index";
+
+.ConstructorCart{
+    box-shadow: $shadow-card;
+    margin-top: 120px;
+    width: 300px;
+    min-height: 400px;
+    height: 20%;
+    border-radius: 8px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &-text{
+        @include Sans-serif-16-bold;
+        margin-top: 20px;
+        margin-left: 0;
+        margin-bottom: 20px;
+        &-group{
+            @include Sans-serif-20-Medium;
+            margin-top: 8px;
+            width: 100%;
+            margin-left: 8px;
+            padding: 5px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            border: 2px solid $color-lavender;
+            border-width: 0px 0px 2px 0px;
+        }
+    }
+    &-CartItem{
+        width: 100%;
+
+    }
+}

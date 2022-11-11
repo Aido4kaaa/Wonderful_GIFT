@@ -1,0 +1,15 @@
+@import "../../ui-kit/styles/index";
+
+.Description{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 8px 0px;
+    justify-content: space-between;
+    &-text{
+        @include Sans-serif-14-regular;
+    }
+    &-value{
+        @include Sans-serif-14-regular;
+    }
+}

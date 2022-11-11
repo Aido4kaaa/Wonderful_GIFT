@@ -1,0 +1,24 @@
+@import "../../ui-kit/styles/index";
+
+.ConstructorPage {
+    background: $color-lavender;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+
+    &-container{
+        box-shadow: $shadow-card;
+        margin-top: 120px;
+        margin-right: 20px;
+        background: $color-lightwhite;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 1050px;
+        border-radius: 5px;
+        box-shadow: 5px 5px 5px rgba(0,0,0,.1);
+    }
+    &-Steps{
+        margin-top: 90px; 
+    }
+}   

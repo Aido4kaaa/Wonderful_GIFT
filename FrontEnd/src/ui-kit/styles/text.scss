@@ -1,7 +1,10 @@
-$base-font-family: "Roboto", sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400|Lora');
+$base-font-family: 'Open Sans', sans-serif;
+$serif: 'Lora', serif;
 
-/* Roboto/12/Regular */
-@mixin roboto-12-regular {
+
+/* Sans-serif/12/Regular */
+@mixin Sans-serif-12-regular {
   font-family: $base-font-family;
   font-size: 12px;
   font-weight: 400;
@@ -9,8 +12,8 @@ $base-font-family: "Roboto", sans-serif;
   line-height: 1.25;
 }
 
-/* Roboto/14/Regular */
-@mixin roboto-14-regular {
+/* Sans-serif/14/Regular */
+@mixin Sans-serif-14-regular {
   font-family: $base-font-family;
   font-size: 14px;
   font-weight: 400;
@@ -18,8 +21,8 @@ $base-font-family: "Roboto", sans-serif;
   line-height: 1.25;
 }
 
-/* roboto/14/Bold */
-@mixin roboto-14-bold {
+/* Sans-serif/14/Bold */
+@mixin Sans-serif-14-bold {
   font-family: $base-font-family;
   font-size: 14px;
   font-weight: 700;
@@ -27,8 +30,8 @@ $base-font-family: "Roboto", sans-serif;
   line-height: 1.25;
 }
 
-/* roboto/16/Regular */
-@mixin roboto-16-regular {
+/* Sans-serif/16/Regular */
+@mixin Sans-serif-16-regular {
   font-family: $base-font-family;
   font-size: 16px;
   font-weight: 400;
@@ -36,8 +39,8 @@ $base-font-family: "Roboto", sans-serif;
   line-height: 1.25;
 }
 
-/* roboto/16/Bold */
-@mixin roboto-16-bold {
+/* Sans-serif/16/Bold */
+@mixin Sans-serif-16-bold {
   font-family: $base-font-family;
   font-size: 16px;
   font-weight: 700;
@@ -45,8 +48,8 @@ $base-font-family: "Roboto", sans-serif;
   line-height: 1.25;
 }
 
-/* roboto/20/Medium */
-@mixin roboto-20-Medium {
+/* Sans-serif/20/Medium */
+@mixin Sans-serif-20-Medium {
   font-family: $base-font-family;
   font-size: 20px;
   font-weight: 500;
@@ -54,8 +57,8 @@ $base-font-family: "Roboto", sans-serif;
   line-height: 1.25;
 }
 
-/* Roboto/28/Medium */
-@mixin roboto-28-medium {
+/* Sans-serif/28/Medium */
+@mixin Sans-serif-28-medium {
   font-family: $base-font-family;
   font-size: 28px;
   font-weight: 500;
@@ -63,8 +66,8 @@ $base-font-family: "Roboto", sans-serif;
   line-height: 1.25;
 }
 
-/* roboto/24/Regular */
-@mixin roboto-24-regular {
+/* Sans-serif/24/Regular */
+@mixin Sans-serif-24-regular {
   font-family: $base-font-family;
   font-size: 24px;
   font-weight: 400;
@@ -72,9 +75,92 @@ $base-font-family: "Roboto", sans-serif;
   line-height: 1.25;
 }
 
-/* roboto/24/Bold */
-@mixin roboto-24-bold {
+/* Sans-serif/24/Bold */
+@mixin Sans-serif-24-bold {
   font-family: $base-font-family;
+  font-size: 24px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.25;
+}
+
+/* serif */
+
+/* Serif/12/Regular */
+@mixin Serif-12-regular {
+  font-family: $serif;
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.25;
+}
+
+/* Serif/14/Regular */
+@mixin Serif-14-regular {
+  font-family: $serif;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.25;
+}
+
+/* Serif/14/Bold */
+@mixin Serif-14-bold {
+  font-family: $serif;
+  font-size: 14px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.25;
+}
+
+/* Serif/16/Regular */
+@mixin Serif-16-regular {
+  font-family: $serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.25;
+}
+
+/* Serif/16/Bold */
+@mixin Serif-16-bold {
+  font-family: $serif;
+  font-size: 16px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.25;
+}
+
+/* Serif/20/Medium */
+@mixin Serif-20-Medium {
+  font-family: $serif;
+  font-size: 20px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.25;
+}
+
+/* Serif/28/Medium */
+@mixin Serif-28-medium {
+  font-family: $serif;
+  font-size: 28px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.25;
+}
+
+/* Serif/24/Regular */
+@mixin Serif-24-regular {
+  font-family: $serif;
+  font-size: 24px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.25;
+}
+
+/* Serif/24/Bold */
+@mixin Serif-24-bold {
+  font-family: $serif;
   font-size: 24px;
   font-weight: 700;
   font-style: normal;

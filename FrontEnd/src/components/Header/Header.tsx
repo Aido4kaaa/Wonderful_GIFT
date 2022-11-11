@@ -7,17 +7,20 @@ export const Header: React.FC = () => {
   return (
     <header className="Header">
         <NavLink className="Header-Logo">
-            Wonderful Gifts
+        <span className='span'>
+              WONDERFUL
+            </span>
+            GIFTS
         </NavLink>
         <div className="Header-Menu">
             <Link className="Header-Menu-Item" to='./'>
             Магазин
             </Link>
-            <Link className="Header-Menu-Item" to='./'>
+            <Link className="Header-Menu-Item" to='CreateGift'>
             Конструктор подарков
             </Link>
-            <Link className="Header-Menu-Item" to='./'>
-            Войти/Регистрация
+            <Link className="Header-Menu-Item" to='Auth'>
+            Авторизация
             </Link>
         </div>
     </header>
