@@ -1,16 +1,22 @@
 import React from "react";
 import Description from "../Description";
+import { IBox } from "../../Interfaces/Interfaces";
 import "./Item.scss";
 
-export const Item: React.FC = () => {
+export const Item: React.FC<IBox> = ({name, description}) => {
   return (
     <div className="Item">
       <div className="Item-Name">
-        Коробка №1
+        {name}
       </div>
-      <Description text="Цена" value="200₽"/>
-      <Description text="Объём" value="20х20х20"/>
-      <Description text="Вес" value="500кг"/>
+      {
+        description?.map(
+          d => ( 
+          <Description text={d.text} value={d.value} key={d.id}/>
+          )
+        )
+      
+      }
      </div>
   );
 };

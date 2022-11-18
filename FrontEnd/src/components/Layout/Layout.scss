@@ -1,7 +1,11 @@
+@import "../../ui-kit/styles/index";
+
 .Layout {
   display: flex;
   &-Container {
     /*ширина контейнера чистая 1200px*/
+    height: 100vh;
+    background: $color-lavender;
     width: 100vw;
   }
 }

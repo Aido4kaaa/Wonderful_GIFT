@@ -5,16 +5,14 @@
     width: 100vw;
     display: flex;
     justify-content: center;
-
     &-container{
         box-shadow: $shadow-card;
         margin-top: 120px;
         margin-right: 20px;
         background: $color-lightwhite;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 1050px;
+        display: grid;  
+        grid-template-rows:  500px ; 
+        grid-template-columns: 320px 320px 320px; 
         border-radius: 5px;
         box-shadow: 5px 5px 5px rgba(0,0,0,.1);
     }
@@ -22,3 +20,45 @@
         margin-top: 90px; 
     }
 }   
+
+.Disable{
+    visibility: collapse;
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    display: block;
+    grid-template-rows:  0px; 
+    grid-template-columns: 0px; 
+}
+
+.CartAndButton{
+    margin-top: 120px;
+    width: 300px;
+    min-height: 400px;
+    height: 20%;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button{
+    width: 300px;
+    height: 64px;
+    padding: 12px;
+    font-family: $base-font-family;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border: 0px;
+    margin-top: 40px;
+    font-size: 11px;
+    border-radius: 10px;
+    outline: none;
+    display: block;
+    &:hover {
+          background: $color-pale;
+          color: $color-lightwhite;
+          transition: background-color 1s ease-out;
+    }
+}
+

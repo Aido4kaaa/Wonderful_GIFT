@@ -1,30 +1,52 @@
 import React from 'react';
+import { IDescription } from '../../Interfaces/Interfaces';
 import Description from '../Description';
 import "./Card.scss"
 
-export const Card = () => (
+interface IProps{
+    img?: string,
+    price?:number,
+    name?:string,
+    id? : number,
+    onCart? : boolean,
+    Descriptions? : IDescription[];
+    AddToCartEvent(id?: number) : void;
+}
+
+
+export const Card : React.FC<IProps> = ({img, price, name, Descriptions, id, AddToCartEvent, onCart}) => {
+    const AddToCart = () => {
+        AddToCartEvent(id);
+    }
+
+    if (!onCart)
+    return (
     <div className="wrapper">
         <div className="container">
-            <div className="top" style={{
-                background : "url(https://i.pinimg.com/564x/72/14/81/7214819a44f3e5f7722e3370b8741a80.jpg) no-repeat center center",
-            }}></div>
+            <div className="top">
+                <img src={img} className='img'/>
+            </div>
             <div className="bottom">
             <div className="left">
                 <div className="details">
-                <h1>Коробка</h1>
-                <p>250₽ </p>
+                <h1>{name}</h1>
+                <p>{price}₽ {onCart} </p>
                 </div>
-                <div className="buy">
+                <div className="buy" onClick={AddToCart}>
                     <img src='https://cdn-icons-png.flaticon.com/512/1632/1632686.png'/>
                 </div>
             </div>
             <div className="right">
                 <div className="done"><i className="material-icons">done</i></div>
                 <div className="details">
-                <h1>Chair</h1>
+                <h1>{name}</h1>
                 <p>Добавлено в корзину</p>
                 </div>
-                <div className="remove"><i className="material-icons">clear</i></div>
+                <div className="remove">
+                    <i className="material-icons">
+                        Удалить
+                    </i>
+                </div>
             </div>
             </div>
         </div>
@@ -33,10 +55,59 @@ export const Card = () => (
                 <img src='https://cdn-icons-png.flaticon.com/512/5393/5393011.png'/>
             </div>
             <div className="contents">
-                <Description text='Цена' value='250₽'/>
-                <Description text='Объём' value='20х20х20'/>
-                <Description text='Вес' value='1кг'/>
+                {
+                    Descriptions?.map(d => (
+                            <Description key={d.id} text={d.text} value={d.value}/>
+                        ))
+                }
             </div>
         </div>
     </div>
-)
+    );
+    else
+    return (
+        <div className="wrapper">
+            <div className="container">
+                <div className="top">
+                    <img src={img} className='img'/>
+                </div>
+                <div className="bottom clicked">
+                <div className="left">
+                    <div className="details">
+                    <h1>{name}</h1>
+                    <p>{price}₽ </p>
+                    </div>
+                    <div className="buy" onClick={AddToCart}>
+                        <img src='https://cdn-icons-png.flaticon.com/512/1632/1632686.png'/>
+                    </div>
+                </div>
+                <div className="right">
+                    <div className="done"><i className="material-icons">done</i></div>
+                    <div className="details">
+                    <h1>{name}</h1>
+                    <p>Добавлено в корзину</p>
+                    </div>
+                    <div className="remove">
+                        <i className="material-icons">
+                            Удалить
+                        </i>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div className="inside">
+                <div className="icon">
+                    <img src='https://cdn-icons-png.flaticon.com/512/5393/5393011.png'/>
+                </div>
+                <div className="contents">
+                    {
+                        Descriptions?.map(d => (
+                                <Description key={d.id} text={d.text} value={d.value}/>
+                            ))
+                    }
+                </div>
+            </div>
+        </div>
+        );
+}
+

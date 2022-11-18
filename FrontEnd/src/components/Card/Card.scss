@@ -27,6 +27,14 @@
         -moz-background-size: 100%;
         -o-background-size: 100%;
         background-size: 100%;
+        .img{
+          display: block;
+          position: relative;
+          left: -10%;
+          margin: auto;
+          width: 120%;
+          height: 100%;
+        }
       }
       .bottom{
         width: 200%;
