@@ -21,10 +21,10 @@ export const App: React.FC = () => {
     Descriprions.push(new Description(1, "Цена" , "5000"));
     Descriprions.push(new Description(2, "Объём" , "20х20х20"));
     Descriprions.push(new Description(3, "Макс. Вес" , "1кг"));
-    Boxes.push(new Box("Коробка", Descriprions, 1, "https://ex-garant.ru/wp-content/uploads/2020/12/dostavka-korporativnyh-podarkov-spb.png", 900,false));
-    Boxes.push(new Box("Коробка", Descriprions, 2, "https://i.etsystatic.com/igwp/74ea59/1345531058/igwp_600xN.1345531058_4mrxtegx.jpg?version=0", 800,false));
-    Boxes.push(new Box("Коробка", Descriprions, 3, "https://ex-garant.ru/wp-content/uploads/2020/12/dostavka-korporativnyh-podarkov-spb.png", 600,false));
-    Boxes.push(new Box("Коробка", Descriprions, 4, "https://i.etsystatic.com/igwp/74ea59/1345531058/igwp_600xN.1345531058_4mrxtegx.jpg?version=0", 500,false));
+    Boxes.push(new Box("Коробка", Descriprions, 9, "https://ex-garant.ru/wp-content/uploads/2020/12/dostavka-korporativnyh-podarkov-spb.png", 900,false));
+    Boxes.push(new Box("Коробка", Descriprions, 10, "https://i.etsystatic.com/igwp/74ea59/1345531058/igwp_600xN.1345531058_4mrxtegx.jpg?version=0", 800,false));
+    Boxes.push(new Box("Коробка", Descriprions, 11, "https://ex-garant.ru/wp-content/uploads/2020/12/dostavka-korporativnyh-podarkov-spb.png", 600,false));
+    Boxes.push(new Box("Коробка", Descriprions, 12, "https://i.etsystatic.com/igwp/74ea59/1345531058/igwp_600xN.1345531058_4mrxtegx.jpg?version=0", 500,false));
     return (
         <div>
             <Layout>

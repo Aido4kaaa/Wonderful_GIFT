@@ -25,6 +25,19 @@ export const ConstructorPage : React.FC<IProps> = ({AllFillers, AllBoxes}) => {
         });
     }
 
+    const DeleteFillersFromCart = (id: number) => {
+        SetFillers(new Array<IFillers>);
+        AllFillers.forEach(element => {
+            if (element.id != id && element.onCart)
+            {
+                SetFillers(Fillers => [...Fillers, element]);
+            }
+            else {
+                element.onCart = false;
+            }
+        });
+    }
+
     const ChooseBox = (id: number) => {
         AllBoxes.forEach(element => {
             if (element.id == Box?.id)
@@ -41,13 +54,27 @@ export const ConstructorPage : React.FC<IProps> = ({AllFillers, AllBoxes}) => {
         });
     }
 
+    const DeleteBox = (id: number) => {
+        AllBoxes.forEach(element => {
+            if (element.id == Box?.id)
+            {
+                element.onCart = false;
+            }
+            if (element.id == id)
+            {
+                element.onCart = false;
+                SetBox(undefined);
+            }
+        });
+    }
+
     if (IsFillersVisible)
     return(
 	<div className='ConstructorPage'>
         <div className="ConstructorPage-container">
             {
                 AllFillers.map(af => (
-                    <Card key={af.id} img={af.img} name={af.name} price={af.price} AddToCartEvent={AddFillersToCart} id={af.id} onCart={af.onCart}/>
+                    <Card key={af.id} img={af.img} name={af.name} price={af.price} AddToCartEvent={AddFillersToCart} DeleteFromCartEvent={DeleteFillersFromCart} id={af.id} onCart={af.onCart}/>
                 ))
             }
         </div>
@@ -65,7 +92,7 @@ export const ConstructorPage : React.FC<IProps> = ({AllFillers, AllBoxes}) => {
         <div className="ConstructorPage-container">
             {
                 AllBoxes.map(ab => (
-                    <Card key={ab.id} name={ab.name} Descriptions={ab.description} img={ab.img} price={ab.price} AddToCartEvent={ChooseBox} id={ab.id} onCart={ab.onCart}/>
+                    <Card key={ab.id} name={ab.name} Descriptions={ab.description} img={ab.img} price={ab.price} AddToCartEvent={ChooseBox} DeleteFromCartEvent={DeleteBox} id={ab.id} onCart={ab.onCart}/>
                 ))
             }
         </div>

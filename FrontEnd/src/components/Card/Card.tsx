@@ -11,12 +11,17 @@ interface IProps{
     onCart? : boolean,
     Descriptions? : IDescription[];
     AddToCartEvent(id?: number) : void;
+    DeleteFromCartEvent(id?: number) : void;
 }
 
 
-export const Card : React.FC<IProps> = ({img, price, name, Descriptions, id, AddToCartEvent, onCart}) => {
+export const Card : React.FC<IProps> = ({img, price, name, Descriptions, id, AddToCartEvent,DeleteFromCartEvent, onCart, }) => {
     const AddToCart = () => {
         AddToCartEvent(id);
+    }
+
+    const DeleteFromCart = () => {
+        DeleteFromCartEvent(id);
     }
 
     if (!onCart)
@@ -27,27 +32,15 @@ export const Card : React.FC<IProps> = ({img, price, name, Descriptions, id, Add
                 <img src={img} className='img'/>
             </div>
             <div className="bottom">
-            <div className="left">
-                <div className="details">
-                <h1>{name}</h1>
-                <p>{price}₽ {onCart} </p>
+                <div className="left">
+                    <div className="details">
+                    <h1>{name}</h1>
+                    <p>{price}₽ {onCart} </p>
+                    </div>
+                    <div className="buy" onClick={AddToCart}>
+                        <img src='https://cdn-icons-png.flaticon.com/512/1632/1632686.png'/>
+                    </div>
                 </div>
-                <div className="buy" onClick={AddToCart}>
-                    <img src='https://cdn-icons-png.flaticon.com/512/1632/1632686.png'/>
-                </div>
-            </div>
-            <div className="right">
-                <div className="done"><i className="material-icons">done</i></div>
-                <div className="details">
-                <h1>{name}</h1>
-                <p>Добавлено в корзину</p>
-                </div>
-                <div className="remove">
-                    <i className="material-icons">
-                        Удалить
-                    </i>
-                </div>
-            </div>
             </div>
         </div>
         <div className="inside">
@@ -78,26 +71,26 @@ export const Card : React.FC<IProps> = ({img, price, name, Descriptions, id, Add
                     <p>{price}₽ </p>
                     </div>
                     <div className="buy" onClick={AddToCart}>
-                        <img src='https://cdn-icons-png.flaticon.com/512/1632/1632686.png'/>
+                        <img src='https://cdn-icons-png.flaticon.com/512/1632/1632686.png' className='imgBuyCancel'/>
                     </div>
                 </div>
                 <div className="right">
-                    <div className="done"><i className="material-icons">done</i></div>
+                    <div className="done">
+                        <img src='https://cdn-icons-png.flaticon.com/512/33/33281.png' className='imgBuyCancel'/>
+                    </div>
                     <div className="details">
                     <h1>{name}</h1>
                     <p>Добавлено в корзину</p>
                     </div>
                     <div className="remove">
-                        <i className="material-icons">
-                            Удалить
-                        </i>
+                        <img src='https://cdn-icons-png.flaticon.com/512/5368/5368396.png' className='imgBuyCancel' onClick={DeleteFromCart}/>
                     </div>
                 </div>
                 </div>
             </div>
             <div className="inside">
                 <div className="icon">
-                    <img src='https://cdn-icons-png.flaticon.com/512/5393/5393011.png'/>
+                    <img src='https://cdn-icons-png.flaticon.com/512/5393/5393011.png' className='imgBuyCancel'/>
                 </div>
                 <div className="contents">
                     {
