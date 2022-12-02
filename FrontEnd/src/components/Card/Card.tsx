@@ -93,7 +93,7 @@ export const Card : React.FC<IProps> = ({img, price, name, Descriptions, id, Add
             </div>
             <div className="inside">
                 <div className="icon">
-                    <img src='https://cdn-icons-png.flaticon.com/512/5393/5393011.png' referrerPolicy='no-referrer' className='imgBuyCancel'/>
+                    <img src='https://cdn-icons-png.flaticon.com/512/5393/5393011.png' className='imgBuyCancel'/>
                 </div>
                 <div className="contents">
                     {
