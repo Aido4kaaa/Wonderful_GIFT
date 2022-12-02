@@ -40,14 +40,14 @@ export const Card : React.FC<IProps> = ({img, price, name, Descriptions, id, Add
                     <p>{price}₽ {onCart} </p>
                     </div>
                     <div className="buy" onClick={AddToCart}>
-                        <img src='https://www.flaticon.com/svg/vstatic/svg/3914/3914248.svg?token=exp=1670020726~hmac=2b46ff6d4a978b4639fc9c2718bb4759'/>
+                        <img src='https://www.flaticon.com/svg/vstatic/svg/3914/3914248.svg?token=exp=1670020726~hmac=2b46ff6d4a978b4639fc9c2718bb4759' referrerPolicy='no-referrer'/>
                     </div>
                 </div>
             </div>
         </div>
         <div className="inside">
             <div className="icon">
-                <img src='https://cdn-icons-png.flaticon.com/512/5393/5393011.png'/>
+                <img src='https://cdn-icons-png.flaticon.com/512/5393/5393011.png' referrerPolicy='no-referrer'/>
             </div>
             <div className="contents">
                 {
@@ -74,26 +74,26 @@ export const Card : React.FC<IProps> = ({img, price, name, Descriptions, id, Add
                     <p>{price}₽ </p>
                     </div>
                     <div className="buy" onClick={AddToCart}>
-                        <img src='https://www.flaticon.com/svg/vstatic/svg/3914/3914248.svg?token=exp=1670020726~hmac=2b46ff6d4a978b4639fc9c2718bb4759' className='imgBuyCancel'/>
+                        <img src='https://www.flaticon.com/svg/vstatic/svg/3914/3914248.svg?token=exp=1670020726~hmac=2b46ff6d4a978b4639fc9c2718bb4759' referrerPolicy='no-referrer' className='imgBuyCancel'/>
                     </div>
                 </div>
                 <div className="right">
                     <div className="done">
-                        <img src='https://www.flaticon.com/svg/vstatic/svg/5074/5074631.svg?token=exp=1670021089~hmac=8a01c02ecf9a8b6072e18d843409aa01' className='imgBuyCancel'/>
+                        <img src='https://www.flaticon.com/svg/vstatic/svg/5074/5074631.svg?token=exp=1670021089~hmac=8a01c02ecf9a8b6072e18d843409aa01' referrerPolicy='no-referrer' className='imgBuyCancel'/>
                     </div>
                     <div className="details">
                     <h1>{name}</h1>
                     <p>Добавлено в корзину</p>
                     </div>
                     <div className="remove">
-                        <img src='https://cdn-icons.flaticon.com/svg/3917/3917206.svg?token=exp=1670020803~hmac=1b111463e9d0a757f7e805c501f0fb55' className='imgBuyCancel' onClick={DeleteFromCart}/>
+                        <img src='https://cdn-icons.flaticon.com/svg/3917/3917206.svg?token=exp=1670020803~hmac=1b111463e9d0a757f7e805c501f0fb55' referrerPolicy='no-referrer' className='imgBuyCancel' onClick={DeleteFromCart}/>
                     </div>
                 </div>
                 </div>
             </div>
             <div className="inside">
                 <div className="icon">
-                    <img src='https://cdn-icons-png.flaticon.com/512/5393/5393011.png' className='imgBuyCancel'/>
+                    <img src='https://cdn-icons-png.flaticon.com/512/5393/5393011.png' referrerPolicy='no-referrer' className='imgBuyCancel'/>
                 </div>
                 <div className="contents">
                     {
