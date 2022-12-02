@@ -28,8 +28,10 @@ export const Card : React.FC<IProps> = ({img, price, name, Descriptions, id, Add
     return (
     <div className="wrapper">
         <div className="container">
-            <div className="top">
-                <img src={img} className='img'/>
+            <div className="top" style={{
+                background : `url(${img}) no-repeat center center`,
+                backgroundSize : "100%",
+            }}>
             </div>
             <div className="bottom">
                 <div className="left">
@@ -38,7 +40,7 @@ export const Card : React.FC<IProps> = ({img, price, name, Descriptions, id, Add
                     <p>{price}₽ {onCart} </p>
                     </div>
                     <div className="buy" onClick={AddToCart}>
-                        <img src='https://cdn-icons-png.flaticon.com/512/1632/1632686.png'/>
+                        <img src='https://www.flaticon.com/svg/vstatic/svg/3914/3914248.svg?token=exp=1670020726~hmac=2b46ff6d4a978b4639fc9c2718bb4759'/>
                     </div>
                 </div>
             </div>
@@ -61,9 +63,10 @@ export const Card : React.FC<IProps> = ({img, price, name, Descriptions, id, Add
     return (
         <div className="wrapper">
             <div className="container">
-                <div className="top">
-                    <img src={img} className='img'/>
-                </div>
+                <div className="top" style={{
+                    background : `url(${img}) no-repeat center center`,
+                    backgroundSize : "100%",
+                }}/>
                 <div className="bottom clicked">
                 <div className="left">
                     <div className="details">
@@ -71,19 +74,19 @@ export const Card : React.FC<IProps> = ({img, price, name, Descriptions, id, Add
                     <p>{price}₽ </p>
                     </div>
                     <div className="buy" onClick={AddToCart}>
-                        <img src='https://cdn-icons-png.flaticon.com/512/1632/1632686.png' className='imgBuyCancel'/>
+                        <img src='https://www.flaticon.com/svg/vstatic/svg/3914/3914248.svg?token=exp=1670020726~hmac=2b46ff6d4a978b4639fc9c2718bb4759' className='imgBuyCancel'/>
                     </div>
                 </div>
                 <div className="right">
                     <div className="done">
-                        <img src='https://cdn-icons-png.flaticon.com/512/33/33281.png' className='imgBuyCancel'/>
+                        <img src='https://www.flaticon.com/svg/vstatic/svg/5074/5074631.svg?token=exp=1670021089~hmac=8a01c02ecf9a8b6072e18d843409aa01' className='imgBuyCancel'/>
                     </div>
                     <div className="details">
                     <h1>{name}</h1>
                     <p>Добавлено в корзину</p>
                     </div>
                     <div className="remove">
-                        <img src='https://cdn-icons-png.flaticon.com/512/5368/5368396.png' className='imgBuyCancel' onClick={DeleteFromCart}/>
+                        <img src='https://cdn-icons.flaticon.com/svg/3917/3917206.svg?token=exp=1670020803~hmac=1b111463e9d0a757f7e805c501f0fb55' className='imgBuyCancel' onClick={DeleteFromCart}/>
                     </div>
                 </div>
                 </div>
