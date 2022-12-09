@@ -11,10 +11,11 @@
         margin-right: 20px;
         background: $color-lightwhite;
         display: grid;  
-        grid-template-rows:  500px ; 
+        grid-template-rows:  520px;
+        padding: 20px;
         grid-template-columns: 320px 320px 320px; 
-        border-radius: 5px;
-        box-shadow: 5px 5px 5px rgba(0,0,0,.1);
+        border-radius: 8px;
+        box-shadow: 8px 8px 8px rgba(0,0,0,.4);
     }
     &-Steps{
         margin-top: 90px; 

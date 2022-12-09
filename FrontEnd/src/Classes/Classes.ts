@@ -6,13 +6,15 @@ export class Filler implements IFillers{
     id : number;
     img : string;
     onCart : boolean;
-    constructor (Name : string, Price : number, Id : number, Img : string, OnCart : boolean)
+    description? : string;
+    constructor (Name : string, Price : number, Id : number, Img : string, OnCart : boolean, Description? : string)
     {
         this.name = Name;
         this.price = Price;
         this.id = Id;
         this.img = Img;
         this.onCart = OnCart;
+        this.description = Description
     }
 }
 

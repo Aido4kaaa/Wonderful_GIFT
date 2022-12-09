@@ -140,6 +140,15 @@ $serif: 'Lora', serif;
   line-height: 1.25;
 }
 
+/* Serif/20/Medium */
+@mixin Serif-20-Bold {
+  font-family: $serif;
+  font-size: 20px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.25;
+}
+
 /* Serif/28/Medium */
 @mixin Serif-28-medium {
   font-family: $serif;

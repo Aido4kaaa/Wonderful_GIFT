@@ -14,7 +14,6 @@ export const ConstructorPage : React.FC<IProps> = ({AllFillers, AllBoxes}) => {
     const [IsFillersVisible, SetFillersVisible] = React.useState(true);
     const [Fillers, SetFillers] = React.useState(new Array<IFillers>);
     const [Box, SetBox] = React.useState<IBox>();
-
     const AddFillersToCart = (id: number) => {
         AllFillers.forEach(element => {
             if (element.id == id)
@@ -74,7 +73,7 @@ export const ConstructorPage : React.FC<IProps> = ({AllFillers, AllBoxes}) => {
         <div className="ConstructorPage-container">
             {
                 AllFillers.map(af => (
-                    <Card key={af.id} img={af.img} name={af.name} price={af.price} AddToCartEvent={AddFillersToCart} DeleteFromCartEvent={DeleteFillersFromCart} id={af.id} onCart={af.onCart}/>
+                    <Card key={af.id} img={af.img} name={af.name} price={af.price} AddToCartEvent={AddFillersToCart} DeleteFromCartEvent={DeleteFillersFromCart} id={af.id} onCart={af.onCart} fillersDescriptions={af.description}/>
                 ))
             }
         </div>
@@ -92,7 +91,7 @@ export const ConstructorPage : React.FC<IProps> = ({AllFillers, AllBoxes}) => {
         <div className="ConstructorPage-container">
             {
                 AllBoxes.map(ab => (
-                    <Card key={ab.id} name={ab.name} Descriptions={ab.description} img={ab.img} price={ab.price} AddToCartEvent={ChooseBox} DeleteFromCartEvent={DeleteBox} id={ab.id} onCart={ab.onCart}/>
+                    <Card key={ab.id ? ab.id + 500 : ab.id} name={ab.name} Descriptions={ab.description} img={ab.img} price={ab.price} AddToCartEvent={ChooseBox} DeleteFromCartEvent={DeleteBox} id={ab.id} onCart={ab.onCart}/>
                 ))
             }
         </div>

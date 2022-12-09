@@ -10,18 +10,34 @@ interface IProps{
     id? : number,
     onCart? : boolean,
     Descriptions? : IDescription[];
+    fillersDescriptions? : string;
     AddToCartEvent(id?: number) : void;
     DeleteFromCartEvent(id?: number) : void;
 }
 
 
-export const Card : React.FC<IProps> = ({img, price, name, Descriptions, id, AddToCartEvent,DeleteFromCartEvent, onCart, }) => {
+export const Card : React.FC<IProps> = ({img, price, name, Descriptions, id, AddToCartEvent,DeleteFromCartEvent, onCart, fillersDescriptions}) => {
     const AddToCart = () => {
         AddToCartEvent(id);
     }
 
     const DeleteFromCart = () => {
         DeleteFromCartEvent(id);
+    }
+
+    const DescriptionsFillersAndBoxes = () => {
+        if (fillersDescriptions != undefined)
+            return(
+            <div className='TextDescription'>
+                {fillersDescriptions}
+            </div>)
+        else {
+            return(
+                Descriptions?.map(d => (
+                    <Description key={d.id} text={d.text} value={d.value} DescriptionText={"Description-text TextDescription"} DescriptionValue={"Description-value TextDescription"}/>
+                ))
+            );
+        }
     }
 
     if (!onCart)
@@ -37,7 +53,7 @@ export const Card : React.FC<IProps> = ({img, price, name, Descriptions, id, Add
                 <div className="left">
                     <div className="details">
                     <h1>{name}</h1>
-                    <p>{price}₽ {onCart} </p>
+                    <p>{price}₽</p>
                     </div>
                     <div className="buy" onClick={AddToCart}>
                         <img src='https://cdn-icons-png.flaticon.com/512/992/992651.png' referrerPolicy='no-referrer'/>
@@ -49,12 +65,8 @@ export const Card : React.FC<IProps> = ({img, price, name, Descriptions, id, Add
             <div className="icon">
                 <img src='https://cdn-icons-png.flaticon.com/512/5393/5393011.png' referrerPolicy='no-referrer'/>
             </div>
-            <div className="contents">
-                {
-                    Descriptions?.map(d => (
-                            <Description key={d.id} text={d.text} value={d.value}/>
-                        ))
-                }
+            <div className="contents TextDescription">
+                    {DescriptionsFillersAndBoxes()}
             </div>
         </div>
     </div>
@@ -95,12 +107,8 @@ export const Card : React.FC<IProps> = ({img, price, name, Descriptions, id, Add
                 <div className="icon">
                     <img src='https://cdn-icons-png.flaticon.com/512/5393/5393011.png' className='imgBuyCancel'/>
                 </div>
-                <div className="contents">
-                    {
-                        Descriptions?.map(d => (
-                                <Description key={d.id} text={d.text} value={d.value}/>
-                            ))
-                    }
+                <div className="contents TextDescription">
+                    {DescriptionsFillersAndBoxes()}
                 </div>
             </div>
         </div>

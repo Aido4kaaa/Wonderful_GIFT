@@ -8,13 +8,12 @@
     position: relative;
     overflow: hidden;
     border-radius: 10px 10px 10px 10px;
-    border: 2px solid #92879B;
-    box-shadow: 0;
+    box-shadow: 5px 20px 30px rgba(0,0,0,0.4);
     transform: scale(0.95);
     transition: box-shadow 0.5s, transform 0.5s;
     &:hover{
       transform: scale(1);
-      box-shadow: 5px 20px 30px rgba(0,0,0,0.2);
+      box-shadow: 5px 20px 30px rgba(0,0,0,0.8);
     }
     
     .container{
@@ -46,6 +45,7 @@
         h1{
             margin:0;
             padding:0;
+            font-size: 1.2rem;
         }
         p{
             margin:0;
@@ -58,9 +58,9 @@
           position:relative;
           float:left;
           .details{
-            padding: 20px;
+            padding: 10px;
             float: left;
-            width: calc(70% - 40px);
+            width: 70%;
           }
           .buy{
             float:right;
@@ -94,8 +94,9 @@
           height:200%;
           overflow: hidden;
           .details{
+            padding: 10px;
             float: right;
-            width: calc(70% - 40px);
+            width: 70%;
           }
           .done{
             width: calc(30% - 2px);
@@ -206,4 +207,9 @@
 .imgBuyCancel{
   width: 40px;
   height: 40px;
+}
+
+.TextDescription{
+  @include Serif-20-Bold;
+  color: black;
 }

@@ -19,4 +19,5 @@ export interface IFillers{
     price? : number;
     id? : number;
     onCart? : boolean;
+    description? : string;
 }
