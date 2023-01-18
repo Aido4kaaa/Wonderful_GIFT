@@ -26,5 +26,24 @@ namespace GiftProject.Controllers
         {
             return await db.Boxes.Include(b => b.description).ToListAsync();
         }
+
+        [HttpGet("GetAllRBoxes")]
+        public async Task<ActionResult<List<RBox>>> GetAllRBoxes()
+        {
+            var q = db.RBoxes.Include(b => b.fillers);
+           
+            var w = await q.Include(b => b.box).ToListAsync();
+            foreach (var element in db.RBoxes)
+            {
+                int price = 0;
+                foreach (var fillers in element.fillers)
+                {
+                    price += Int32.Parse(fillers.price.TrimEnd());
+                }
+                price += element.box.price;
+                element.price = price;
+            }
+            return w;
+        }
     }
 }

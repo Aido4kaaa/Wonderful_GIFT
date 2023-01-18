@@ -1,4 +1,4 @@
-import { IFillers, IBox, IDescription } from "../Interfaces/Interfaces";
+import { IFillers, IBox, IDescription, IReadyBox } from "../Interfaces/Interfaces";
 
 export class Filler implements IFillers{
     name : string;
@@ -46,5 +46,26 @@ export class Description implements IDescription{
         this.id = Id;
         this.value = Value;
         this.text = Text;
+    }
+}
+
+export class ReadyBox implements IReadyBox{
+    id? : number;
+    name? : string;
+    fillers : IFillers[];
+    img?: string;
+    box? : IBox;
+    price? : number;
+    onCart? : boolean;
+    descriptipon? : string;
+    constructor(Id: number, Name: string, Fillers: IFillers[], Box: IBox, Price:number, OnCart : boolean, Img : string, Description : string) {
+        this.id = Id;
+        this.name = Name;
+        this.fillers = Fillers;
+        this.box = Box;
+        this.price = Price;
+        this.onCart = OnCart;
+        this.img = Img;
+        this.descriptipon = Description;
     }
 }

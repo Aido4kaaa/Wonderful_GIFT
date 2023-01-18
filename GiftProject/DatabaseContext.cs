@@ -12,6 +12,7 @@ namespace GiftProject
         public DbSet<Cart> Carts { get; set; }
         public DbSet<FilledBox> FilledBoxes { get; set; }
         public DbSet<Volume> Volumes { get; set; }
+        public DbSet<RBox> RBoxes { get; set; }
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options) { }
     }
 }

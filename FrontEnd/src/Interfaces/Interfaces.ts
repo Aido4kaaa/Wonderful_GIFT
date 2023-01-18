@@ -21,3 +21,14 @@ export interface IFillers{
     onCart? : boolean;
     description? : string;
 }
+
+export interface IReadyBox{
+    id? : number;
+    name? : string;
+    fillers : IFillers[];
+    img? : string;
+    box? : IBox;
+    price? : number;
+    onCart? : boolean;
+    description? : string;
+}

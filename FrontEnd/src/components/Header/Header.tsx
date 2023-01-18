@@ -22,7 +22,7 @@ export const Header: React.FC = () => {
             GIFTS
         </NavLink>
         <div className="Header-Menu">
-            <Link className="Header-Menu-Item" to='./'>
+            <Link className="Header-Menu-Item" to='Shop'>
             Магазин
             </Link>
             <Link className="Header-Menu-Item" to='CreateGift'>
@@ -44,7 +44,7 @@ export const Header: React.FC = () => {
             GIFTS
         </NavLink>
         <div className="Header-Menu">
-            <Link className="Header-Menu-Item" to='./'>
+            <Link className="Header-Menu-Item" to='Shop'>
             Магазин
             </Link>
             <Link className="Header-Menu-Item" to='CreateGift'>

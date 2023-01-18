@@ -3,6 +3,7 @@ using System;
 using GiftProject;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace GiftProject.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20230118195708_qwe")]
+    partial class qwe
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -124,9 +127,6 @@ namespace GiftProject.Migrations
                     b.Property<int?>("FilledBoxid")
                         .HasColumnType("integer");
 
-                    b.Property<int?>("RBoxid")
-                        .HasColumnType("integer");
-
                     b.Property<string>("description")
                         .IsRequired()
                         .HasColumnType("text");
@@ -147,8 +147,6 @@ namespace GiftProject.Migrations
 
                     b.HasIndex("FilledBoxid");
 
-                    b.HasIndex("RBoxid");
-
                     b.ToTable("Fillers");
                 });
 
@@ -167,6 +165,9 @@ namespace GiftProject.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<int>("fillersid")
+                        .HasColumnType("integer");
+
                     b.Property<string>("img")
                         .IsRequired()
                         .HasColumnType("text");
@@ -184,6 +185,8 @@ namespace GiftProject.Migrations
                     b.HasKey("id");
 
                     b.HasIndex("boxid");
+
+                    b.HasIndex("fillersid");
 
                     b.ToTable("RBoxes");
                 });
@@ -269,10 +272,6 @@ namespace GiftProject.Migrations
                     b.HasOne("GiftProject.Models.FilledBox", null)
                         .WithMany("fillers")
                         .HasForeignKey("FilledBoxid");
-
-                    b.HasOne("GiftProject.Models.RBox", null)
-                        .WithMany("fillers")
-                        .HasForeignKey("RBoxid");
                 });
 
             modelBuilder.Entity("GiftProject.Models.RBox", b =>
@@ -283,7 +282,15 @@ namespace GiftProject.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("GiftProject.Models.Filler", "fillers")
+                        .WithMany()
+                        .HasForeignKey("fillersid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("box");
+
+                    b.Navigation("fillers");
                 });
 
             modelBuilder.Entity("GiftProject.Models.Box", b =>
@@ -297,11 +304,6 @@ namespace GiftProject.Migrations
                 });
 
             modelBuilder.Entity("GiftProject.Models.FilledBox", b =>
-                {
-                    b.Navigation("fillers");
-                });
-
-            modelBuilder.Entity("GiftProject.Models.RBox", b =>
                 {
                     b.Navigation("fillers");
                 });
